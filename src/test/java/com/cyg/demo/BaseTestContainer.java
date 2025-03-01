@@ -57,10 +57,10 @@ public abstract class BaseTestContainer {
     static void postgresProperties(DynamicPropertyRegistry registry) {
         // postgresql
         registry.add("spring.datasource.url", postgresDBContainer::getJdbcUrl);
-        registry.add("spring.datasource.jdbcUrl", postgresDBContainer::getJdbcUrl);
+        // registry.add("spring.datasource.jdbcUrl", postgresDBContainer::getJdbcUrl);
         registry.add("spring.datasource.username", postgresDBContainer::getUsername);
         registry.add("spring.datasource.password", postgresDBContainer::getPassword);
-        registry.add("spring.datasource.driverClassName", postgresDBContainer::getDriverClassName);
+        // registry.add("spring.datasource.driverClassName", postgresDBContainer::getDriverClassName);
 
         //kafka
         registry.add("spring.kafka.producer.bootstrapServers", kafkaContainer::getBootstrapServers);
