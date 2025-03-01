@@ -14,13 +14,20 @@ public class ExampleConsumer {
 
     }
 
+    private String lastMessage;
+
     @KafkaListener(id = "search", topics = AppConstants.TOPIC_NAME, groupId = AppConstants.GROUP_ID)
     public void consume(@Payload final ConsumerRecord<String, String> message,                                
                         @Header(name = KafkaHeaders.RECEIVED_KEY, required = false) String key,
                         @Header(name = KafkaHeaders.OFFSET, required = false) Long offset,
                         @Header(KafkaHeaders.RECEIVED_PARTITION) int partition) {
 
+        this.lastMessage = message.value();
         System.out.println("Received message: " + message.value() + " from partition: " + partition + " with offset: " + offset);
+    }
+
+    public String getLastMessage() {
+        return lastMessage;
     }
 
 }
