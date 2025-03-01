@@ -1,5 +1,7 @@
 package com.cyg.demo;
 
+import java.util.List;
+
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -24,5 +26,13 @@ public class TestTableRepository {
     public void insertTestRow() {
         String sql = "INSERT INTO test_table (name) VALUES (?)";
         jdbcTemplate.update(sql, "Test Name");
+    }
+
+    // TODO: This requires a test
+    public void insertTestRowsBatch(List<String> names) {
+        String sql = "INSERT INTO test_table (name) VALUES (?)";
+        jdbcTemplate.batchUpdate(sql, names, names.size(), (ps, argument) -> {
+            ps.setString(1, argument);
+        });
     }
 }
