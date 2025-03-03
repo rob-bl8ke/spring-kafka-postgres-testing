@@ -1,3 +1,31 @@
 spring:
     application:
         name: demo
+
+    ######## Database Configuration  #########
+    datasource:
+        jdbcUrl: jdbc:postgresql://localhost:5532/poc-db-postgresql
+        url: jdbc:postgresql://localhost:5532/poc-db-postgresql
+        driverClassName: org.postgresql.Driver
+        username: admin
+        password: admin
+        poolName: postgresPool
+        maxLifetime: 1200000
+        maximumPoolSize: 1000000000
+        minimumIdle: 1
+
+    ######## Kafka Configuration  #########
+    kafka:
+        consumer:
+            bootstrap-servers: localhost:9092
+            group-id: group-id
+            auto-offset-reset: earliest
+            key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+            value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+            enable-auto-commit: false
+        producer:
+            bootstrap-servers: localhost:9092
+            key-serializer: org.apache.kafka.common.serialization.StringSerializer
+            value-serializer: org.apache.kafka.common.serialization.StringSerializer
+        listener:
+            missing-topics-fatal: false
