@@ -10,10 +10,6 @@ import org.springframework.messaging.handler.annotation.Payload;
 @Service
 public class ExampleConsumer {
 
-    public ExampleConsumer() {
-
-    }
-
     private String lastMessage;
 
     @KafkaListener(id = "search", topics = AppConstants.TOPIC_NAME, groupId = AppConstants.GROUP_ID)
@@ -29,5 +25,4 @@ public class ExampleConsumer {
     public String getLastMessage() {
         return lastMessage;
     }
-
 }
