@@ -4,10 +4,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class TestTableRepository {
+public class EventRepositoryImpl implements EventRepository {
     private final JdbcTemplate jdbcTemplate;
 
-    public TestTableRepository(JdbcTemplate jdbcTemplate) {
+    public EventRepositoryImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 

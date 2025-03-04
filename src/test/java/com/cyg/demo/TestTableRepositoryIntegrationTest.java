@@ -17,7 +17,7 @@ public class TestTableRepositoryIntegrationTest extends BaseTestContainer {
     private static final String SELECT_QUERY = "SELECT COUNT(*) FROM test_table WHERE name = ?";
 
     @Autowired
-    private TestTableRepository testTableRepository;
+    private EventRepository testTableRepository;
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
