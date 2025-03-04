@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.test.annotation.Rollback;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -19,7 +21,25 @@ public class TestTableRepositoryIntegrationTest extends BaseTestContainer {
     private JdbcTemplate jdbcTemplate;
 
     @Test
+    @Transactional
+    @Rollback
     public void testCreateTableAndInsertRow() {
+        // Create the table
+        testTableRepository.createTable();
+
+        // Insert a test row
+        testTableRepository.insertTestRow();
+
+        // Verify the row was inserted
+        String sql = "SELECT COUNT(*) FROM test_table WHERE name = ?";
+        Integer count = jdbcTemplate.queryForObject(sql, Integer.class, "Test Name");
+        assertEquals(1, count);
+    }
+
+    @Test
+    @Transactional
+    @Rollback
+    public void testCreateTableAndInsertRow_2() {
         // Create the table
         testTableRepository.createTable();
 
