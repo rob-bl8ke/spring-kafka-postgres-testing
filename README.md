@@ -73,7 +73,20 @@ mvn test -Dtest=*Test
 mvn test -Dtest=*IT
 ```
 
+## Querying the state of the docker database
 
+In Visual Studio, install the PostgreSQL extension (by Chris Kolkman). Once installed go view its side pane and click to add a connection:
+
+
+- Host: 127.0.0.1
+- Username: admin
+- Password: admin
+- Simply open all databases
+- Call it what ever you like.
+
+> These settings can be retrieved directly from the `docker-compose.yml` file.
+
+In InteliJ there is an option  to simply open the database.
 
 # Reference Documentation
 For further reference, please consider the following sections:

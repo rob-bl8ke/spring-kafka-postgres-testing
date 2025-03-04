@@ -12,15 +12,15 @@ public class EventRepositoryImpl implements EventRepository {
     }
 
     public void insert(String name, String tableName) {
-        String createTableSql = String.format("""
-            CREATE TABLE IF NOT EXISTS %s (
-            id SERIAL PRIMARY KEY,
-            name VARCHAR(100) NOT NULL
-            )
-        """, tableName);
+        String createTableSql = String.format(
+            "CREATE TABLE IF NOT EXISTS %s (" +
+            "id SERIAL PRIMARY KEY, " +
+            "name VARCHAR(100) NOT NULL" +
+            ")", tableName
+        );
         jdbcTemplate.execute(createTableSql);
 
-        String insertRowSql = "INSERT INTO test_table (name) VALUES (?)";
+        String insertRowSql = String.format("INSERT INTO %s (name) VALUES (?)", tableName);
         jdbcTemplate.update(insertRowSql, name);
     }
 }
