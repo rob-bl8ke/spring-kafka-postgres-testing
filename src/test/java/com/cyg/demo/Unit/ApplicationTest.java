@@ -1,4 +1,4 @@
-package com.cyg.demo;
+package com.cyg.demo.Unit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -16,7 +16,7 @@ import org.springframework.test.context.TestPropertySource;
     "spring.jpa.database-platform=org.hibernate.dialect.H2Dialect",
     "spring.application.name=demo"
 })
-class DemoApplicationTests {
+class ApplicationTest {
 
 	@Test
 	void contextLoads() {

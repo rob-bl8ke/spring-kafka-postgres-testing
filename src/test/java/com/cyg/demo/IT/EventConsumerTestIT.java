@@ -1,5 +1,5 @@
 
-package com.cyg.demo;
+package com.cyg.demo.IT;
 
 import org.awaitility.Awaitility;
 import org.junit.jupiter.api.Test;
@@ -7,6 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.test.annotation.DirtiesContext;
+
+import com.cyg.demo.AppConstants;
+import com.cyg.demo.Unit.MockEventConsumer;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.concurrent.TimeUnit;
@@ -14,13 +18,13 @@ import java.util.concurrent.TimeUnit;
 
 @SpringBootTest
 @DirtiesContext
-public class ExampleConsumerTest extends BaseTestContainer {
+public class EventConsumerTestIT extends BaseContainerTestIT {
 
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
 
     @Autowired
-    private ExampleConsumer exampleConsumer;
+    private MockEventConsumer exampleConsumer;
 
     @Test
     public void testConsume() throws InterruptedException {

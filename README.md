@@ -8,6 +8,8 @@ Run in development on the local profile. See `application-local.yml` for profile
 
 In Visual Studio Code this is managed by opening the Spring Boot Dashboard and right clicking on the app. Select "Run with profile..." and select the local profile.  Run it from the command line with these commands:
 
+## Running and Debugging
+
 ### Command-line (PowerShell)
 ```PowerShell
 $env:SPRING_PROFILES_ACTIVE="local"
@@ -59,6 +61,19 @@ Set up your `launch.json` file like such. Note the "env" property to target the 
     ]
 }
 ```
+
+## Testing
+
+Integration tests are postfixed with "IT" and unit tests are postfixed with "Test". Running `mvn test` will target unit tests only. Running `mvn verify` will run both unit tests and integration tests. To target specific tests one can do this at the terminal:
+
+```bash
+# Target unit tests
+mvn test -Dtest=*Test
+# Target integration tests
+mvn test -Dtest=*IT
+```
+
+
 
 # Reference Documentation
 For further reference, please consider the following sections:

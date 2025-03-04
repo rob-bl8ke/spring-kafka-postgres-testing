@@ -1,4 +1,4 @@
-package com.cyg.demo;
+package com.cyg.demo.IT;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -22,13 +22,15 @@ import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.utility.DockerImageName;
 
+import com.cyg.demo.AppConstants;
+
 import java.util.HashMap;
 import java.util.Map;
 
 @Testcontainers
-@Import(BaseTestContainer.KafkaTestContainersConfiguration.class)
+@Import(BaseContainerTestIT.KafkaTestContainersConfiguration.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public abstract class BaseTestContainer {
+public abstract class BaseContainerTestIT {
 
     private static final String POSTGRES_USERNAME = "admin";
     private static final String POSTGRES_PASSWORD = "admin";

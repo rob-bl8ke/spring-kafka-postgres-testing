@@ -1,4 +1,4 @@
-package com.cyg.demo;
+package com.cyg.demo.IT;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,11 +8,13 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.cyg.demo.EventRepository;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
-public class TestTableRepositoryIntegrationTest extends BaseTestContainer {
+public class EventRepositoryTestIT extends BaseContainerTestIT {
 
     private static final String SELECT_QUERY = "SELECT COUNT(*) FROM test_table WHERE name = ?";
 

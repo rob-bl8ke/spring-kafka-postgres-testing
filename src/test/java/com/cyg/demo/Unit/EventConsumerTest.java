@@ -1,4 +1,4 @@
-package com.cyg.demo;
+package com.cyg.demo.Unit;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.junit.jupiter.api.BeforeEach;
@@ -7,6 +7,10 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+
+import com.cyg.demo.AppConstants;
+import com.cyg.demo.EventConsumer;
+import com.cyg.demo.EventService;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.verify;

@@ -1,11 +1,11 @@
-package com.cyg.demo;
+package com.cyg.demo.Unit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
 // A basic Unit Test
-class ExampleUnitTests {
+class ExampleUnitTest {
 
     @Test
     void testApplicationName() {

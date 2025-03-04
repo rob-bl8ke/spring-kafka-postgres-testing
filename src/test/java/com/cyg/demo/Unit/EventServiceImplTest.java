@@ -1,4 +1,4 @@
-package com.cyg.demo;
+package com.cyg.demo.Unit;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -6,6 +6,10 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+
+import com.cyg.demo.EventRepository;
+import com.cyg.demo.EventServiceImpl;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import static org.junit.jupiter.api.Assertions.assertEquals;
