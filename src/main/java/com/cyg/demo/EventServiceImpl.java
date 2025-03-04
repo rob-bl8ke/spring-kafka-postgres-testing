@@ -1,16 +1,12 @@
 package com.cyg.demo;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.time.format.DateTimeFormatter;
 
 @Service
 public class EventServiceImpl implements EventService {
 
-    @Autowired
     private final EventRepository eventRepository;
-
-    @Autowired
     private final DateService dateService;
 
     public EventServiceImpl(EventRepository eventRepository, DateService dateService) {
