@@ -22,9 +22,6 @@ public class EventConsumer {
                         @Header(name = KafkaHeaders.OFFSET, required = false) Long offset,
                         @Header(KafkaHeaders.RECEIVED_PARTITION) int partition) {
 
-        String topic = AppConstants.TOPIC_NAME;
-        String name = message.value();
-        eventService.insert(topic, name);
-        System.out.println("Inserted message: " + name + " into table: " + topic);
+        eventService.insert(AppConstants.TOPIC_NAME, message.value());
     }
 }
