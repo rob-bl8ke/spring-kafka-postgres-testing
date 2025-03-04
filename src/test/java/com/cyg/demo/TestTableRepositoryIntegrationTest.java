@@ -14,6 +14,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 public class TestTableRepositoryIntegrationTest extends BaseTestContainer {
 
+    private static final String SELECT_QUERY = "SELECT COUNT(*) FROM test_table WHERE name = ?";
+
     @Autowired
     private TestTableRepository testTableRepository;
 
@@ -31,7 +33,7 @@ public class TestTableRepositoryIntegrationTest extends BaseTestContainer {
         testTableRepository.insertTestRow();
 
         // Verify the row was inserted
-        String sql = "SELECT COUNT(*) FROM test_table WHERE name = ?";
+        String sql = SELECT_QUERY;
         Integer count = jdbcTemplate.queryForObject(sql, Integer.class, "Test Name");
         assertEquals(1, count);
     }
@@ -47,7 +49,7 @@ public class TestTableRepositoryIntegrationTest extends BaseTestContainer {
         testTableRepository.insertTestRow();
 
         // Verify the row was inserted
-        String sql = "SELECT COUNT(*) FROM test_table WHERE name = ?";
+        String sql = SELECT_QUERY;
         Integer count = jdbcTemplate.queryForObject(sql, Integer.class, "Test Name");
         assertEquals(1, count);
     }

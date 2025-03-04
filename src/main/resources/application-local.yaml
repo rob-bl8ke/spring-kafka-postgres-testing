@@ -1,5 +1,4 @@
 spring:
-    ######## Database Configuration  #########
     datasource:
         jdbcUrl: jdbc:postgresql://localhost:5532/poc-db-postgresql
         url: jdbc:postgresql://localhost:5532/poc-db-postgresql
@@ -11,7 +10,6 @@ spring:
         maximumPoolSize: 1000000000
         minimumIdle: 1
 
-    ######## Kafka Configuration  #########
     kafka:
         consumer:
             bootstrap-servers: localhost:9092
