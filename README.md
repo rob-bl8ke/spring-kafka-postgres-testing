@@ -62,6 +62,12 @@ Set up your `launch.json` file like such. Note the "env" property to target the 
 }
 ```
 
+### Debugging Kafka
+
+```bash
+docker logs -f kafka1
+```
+
 ## Testing
 
 Integration tests are postfixed with "IT" and unit tests are postfixed with "Test". Running `mvn test` will target unit tests only. Running `mvn verify` will run both unit tests and integration tests. To target specific tests one can do this at the terminal:
