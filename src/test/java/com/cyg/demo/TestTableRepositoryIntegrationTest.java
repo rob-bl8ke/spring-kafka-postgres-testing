@@ -27,10 +27,7 @@ public class TestTableRepositoryIntegrationTest extends BaseTestContainer {
     @Rollback
     public void testCreateTableAndInsertRow() {
         // Create the table
-        testTableRepository.createTable();
-
-        // Insert a test row
-        testTableRepository.insertTestRow();
+        testTableRepository.insert("Test Name", "test_table");
 
         // Verify the row was inserted
         String sql = SELECT_QUERY;
@@ -43,10 +40,7 @@ public class TestTableRepositoryIntegrationTest extends BaseTestContainer {
     @Rollback
     public void testCreateTableAndInsertRow_2() {
         // Create the table
-        testTableRepository.createTable();
-
-        // Insert a test row
-        testTableRepository.insertTestRow();
+        testTableRepository.insert("Test Name", "test_table");
 
         // Verify the row was inserted
         String sql = SELECT_QUERY;
