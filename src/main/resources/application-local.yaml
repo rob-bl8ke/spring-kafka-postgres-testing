@@ -1,6 +1,4 @@
 spring:
-    profiles:
-        active: local
     datasource:
         jdbcUrl: jdbc:postgresql://localhost:5532/poc-db-postgresql
         url: jdbc:postgresql://localhost:5532/poc-db-postgresql
