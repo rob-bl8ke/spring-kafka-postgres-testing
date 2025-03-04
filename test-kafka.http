@@ -1,8 +1,8 @@
-@SearchService_HostAddress = http://localhost:8080
+@HostAddress = http://localhost:8080
 
 ###
 # Send a message to test to Kafka and debug the received message logic.
-POST {{SearchService_HostAddress}}/api/kafka/publish
+POST {{HostAddress}}/api/kafka/publish
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
 

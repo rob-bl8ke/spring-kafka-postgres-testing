@@ -12,6 +12,7 @@ public class ExampleConsumer {
 
     private String lastMessage;
 
+    // TODO: Change this id
     @KafkaListener(id = "search", topics = AppConstants.TOPIC_NAME, groupId = AppConstants.GROUP_ID)
     public void consume(@Payload final ConsumerRecord<String, String> message,                                
                         @Header(name = KafkaHeaders.RECEIVED_KEY, required = false) String key,
