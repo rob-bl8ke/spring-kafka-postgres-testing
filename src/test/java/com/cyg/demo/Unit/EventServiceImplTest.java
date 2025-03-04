@@ -7,18 +7,24 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import com.cyg.demo.DateService;
 import com.cyg.demo.EventRepository;
 import com.cyg.demo.EventServiceImpl;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.verify;
 
 public class EventServiceImplTest {
 
     @Mock
     private EventRepository eventRepository;
+
+    @Mock
+    private DateService dateService;
 
     @InjectMocks
     private EventServiceImpl eventServiceImpl;
@@ -32,7 +38,11 @@ public class EventServiceImplTest {
     public void testInsert() {
         String topic = "testTopic";
         String name = "testName";
-        String expectedTableName = topic + "_" + LocalDate.now().format(DateTimeFormatter.BASIC_ISO_DATE);
+        LocalDateTime fixedDateTime = LocalDateTime.of(2025, 3, 4, 0, 0);
+        String expectedTableName = topic + "_" + fixedDateTime.format(DateTimeFormatter.BASIC_ISO_DATE);
+
+        // Configure the mock DateService to return the fixed date
+        when(dateService.getCurrentTime()).thenReturn(fixedDateTime);
 
         eventServiceImpl.insert(topic, name);
 

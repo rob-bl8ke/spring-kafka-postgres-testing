@@ -1,14 +1,17 @@
 package com.cyg.demo.IT;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.cyg.demo.EventRepository;
+import com.cyg.demo.EventService;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -17,6 +20,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class EventRepositoryTestIT extends BaseContainerTestIT {
 
     private static final String SELECT_QUERY = "SELECT COUNT(*) FROM test_table WHERE name = ?";
+
+    @MockBean
+    private EventService eventService;
+
 
     @Autowired
     private EventRepository testTableRepository;

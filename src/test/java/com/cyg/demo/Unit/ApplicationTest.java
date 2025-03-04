@@ -5,7 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.TestPropertySource;
+
+import com.cyg.demo.EventService;
 
 @SpringBootTest
 @TestPropertySource(properties = {
@@ -17,6 +20,9 @@ import org.springframework.test.context.TestPropertySource;
     "spring.application.name=demo"
 })
 class ApplicationTest {
+
+    @MockBean
+    private EventService eventService;
 
 	@Test
 	void contextLoads() {
