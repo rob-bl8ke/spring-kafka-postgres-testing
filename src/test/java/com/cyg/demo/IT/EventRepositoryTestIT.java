@@ -8,7 +8,7 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.cyg.demo.EventRepository;
+import com.cyg.demo.repositories.EventRepository;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

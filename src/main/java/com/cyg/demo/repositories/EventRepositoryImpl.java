@@ -1,4 +1,4 @@
-package com.cyg.demo;
+package com.cyg.demo.repositories;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;

@@ -1,6 +1,9 @@
-package com.cyg.demo;
+package com.cyg.demo.services;
 
 import org.springframework.stereotype.Service;
+
+import com.cyg.demo.repositories.EventRepository;
+
 import java.time.format.DateTimeFormatter;
 
 @Service

@@ -9,8 +9,8 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import com.cyg.demo.AppConstants;
-import com.cyg.demo.EventConsumer;
-import com.cyg.demo.EventService;
+import com.cyg.demo.kafka.EventConsumer;
+import com.cyg.demo.services.EventService;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.verify;

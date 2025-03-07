@@ -7,9 +7,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import com.cyg.demo.DateService;
-import com.cyg.demo.EventRepository;
-import com.cyg.demo.EventServiceImpl;
+import com.cyg.demo.repositories.EventRepository;
+import com.cyg.demo.services.DateService;
+import com.cyg.demo.services.EventServiceImpl;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

@@ -1,6 +1,10 @@
-package com.cyg.demo;
+package com.cyg.demo.kafka;
 
 import org.springframework.stereotype.Service;
+
+import com.cyg.demo.AppConstants;
+import com.cyg.demo.services.EventService;
+
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.support.KafkaHeaders;
