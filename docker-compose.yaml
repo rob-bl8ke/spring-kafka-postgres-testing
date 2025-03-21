@@ -1,11 +1,11 @@
 services:
   poc-db:
     image: postgres:17.4
-    hostname: poc-db-postgresql
-    container_name: poc-db-postgresql
+    hostname: db-postgresql
+    container_name: db-postgresql
     restart: unless-stopped
     environment:
-      POSTGRES_DB: poc-db-postgresql
+      POSTGRES_DB: db-postgresql
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
     ports:

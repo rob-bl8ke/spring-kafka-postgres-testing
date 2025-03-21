@@ -1,14 +1,9 @@
 spring:
     datasource:
-        jdbcUrl: jdbc:postgresql://localhost:5532/poc-db-postgresql
-        url: jdbc:postgresql://localhost:5532/poc-db-postgresql
+        url: jdbc:postgresql://localhost:5532/db-postgresql
         driverClassName: org.postgresql.Driver
         username: admin
         password: admin
-        poolName: postgresPool
-        maxLifetime: 1200000
-        maximumPoolSize: 1000000000
-        minimumIdle: 1
 
     kafka:
         consumer:
